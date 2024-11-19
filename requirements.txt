@@ -1,0 +1,12 @@
+# pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu118 # for Linux & Windows
+# for OSX
+torch==2.5.0 
+torchvision==0.20.0 
+torchaudio==2.5.0 
+
+scikit-learn
+transformers
+pandas
+tqdm
+seaborn
+matplotlib

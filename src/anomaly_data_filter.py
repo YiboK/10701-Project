@@ -1,20 +1,25 @@
+# built-in python library
 import os
+
+# third-parth library
 import torch
 from torch.utils.data import DataLoader, Dataset
-
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 from torch.nn.functional import softmax
-
-from tqdm import tqdm
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, roc_auc_score
 from sklearn.preprocessing import MinMaxScaler
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+import pandas as pd
+from tqdm import tqdm
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# self import
+
+# device selection
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # for Linux & Windows
+device = torch.device('mps' if torch.mps.is_available() else 'cpu') # for OSX
 
 
 def compute_sentiment_score_1(model_name, texts, batch_size=32):
@@ -64,7 +69,7 @@ def compute_sentiment_score_2(model_name, texts, batch_size=32):
 
 
 def main():
-    data = pd.read_csv("yelp.csv")
+    data = pd.read_csv("dataset/yelp.csv")
 
     print(data.info())
     print(data.head())
@@ -90,7 +95,7 @@ def main():
     data["anomaly_score_2"] = data["sentiment_score_2"] - data["normalized_stars"]
     data["anomaly_score"] = (data["anomaly_score_1"] + data["anomaly_score_2"]) / 2
 
-    data.to_csv("yelp_anomaly.csv", index=False)
+    data.to_csv("dataset/yelp_anomaly.csv", index=False)
 
     plt.figure(figsize=(10, 6))
     sns.histplot(data["anomaly_score"], bins=50, kde=True)
