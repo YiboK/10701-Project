@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 # self import
 
 # device selection
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # for Linux & Windows
-device = torch.device('mps' if torch.mps.is_available() else 'cpu') # for OSX
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # for Linux & Windows
+# device = torch.device('mps' if torch.mps.is_available() else 'cpu') # for OSX
 
 
 def compute_sentiment_score_1(model_name, texts, batch_size=32):
