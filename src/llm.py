@@ -1,4 +1,3 @@
-import os
 import csv
 import json
 from pathlib import Path
@@ -8,6 +7,7 @@ from tqdm import tqdm
 from langchain_ollama import ChatOllama
 from prompt import create_prompt
 
+
 def get_llm_response(query, model):
     prompt = create_prompt()
     chain = prompt | model
@@ -15,7 +15,6 @@ def get_llm_response(query, model):
     response = chain.invoke({"input": query}).content
 
     return response
-
 
 def main():
     LLM_NAME = "llama3.1:8b"
