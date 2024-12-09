@@ -20,3 +20,5 @@ pip install matplotlib
 pip install langchain langchain_community 
 pip install ollama # ollama client
 pip install langchain_ollama # local inference and embeddings via Ollama
+pip install swifter  # parallel processing for 
+pip install vaderSentiment # for sentence 
