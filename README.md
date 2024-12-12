@@ -7,8 +7,8 @@
 **generate_features_for_pseudo.py**: Generate semantic representation features of reviews that are used in XGBoost classfier model; Output: yelp_pseudo_features.csv\
 **llm_probability_huggingface.ipynb**: Using Llama-3.1 as the probability estimator of sarcasm using HuggingFace Package; Output: review_500_huggingface.txt\
 **llm_probability_locally.py**: Running binning-based sarcasm extraction using Llama-3.1 using LangChain package; Output: top500_llm_bubbled.txt\
-**llm.py**: Classifies sarcastic reviews using Llama 3.1 based on anomaly scores and outputs sarcasm labels.\
-**prompt.py**: Defines the few-shot prompt template and system instructions for sarcasm classification.
+**llm.py**: Classifying sarcastic reviews using Llama 3.1 based on anomaly scores and outputs sarcasm labels.\
+**prompt.py**: Defining the few-shot prompt template and system instructions for sarcasm classification.
 
 ## Dataset:
 **yelp_anomaly.csv**: Yelp original dataset with additional columns for anomaly score calculation.\
