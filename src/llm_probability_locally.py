@@ -8,6 +8,9 @@ from langchain_core.prompts import (
     ChatPromptTemplate, FewShotChatMessagePromptTemplate
 )
 
+# This code took 29 min 02 s to run on a 16GB RAM, Ultra 9 185H, and RTX 4070 laptop.
+# A local LLM model is needed to run this code. The model can be downloaded from the following link: https://ollama.com/
+
 few_shot_examples = [
     {"input": """["Oh, I just loved waiting an hour for cold food. Truly the highlight of my week!", 
     "Reasonable prices and generous portions. A solid choice for a casual meal.",
